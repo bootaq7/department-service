@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: department
+  data:
+    mongodb:
+      uri: mongodb://piotr:Piot_123@localhost:27017/admin
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+    kubernetes:
+      discovery:
+        all-namespaces: true
+
+logging:
+  pattern: 
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
